@@ -1,19 +1,26 @@
 <template>
   <div id="app">
+    {{ count }}
     <img alt="Vue logo" src="./assets/logo.png">
     <Counter />
   </div>
 </template>
 
-<script>
-import { Counter } from 'ui'
+<script lang="ts">
+import Vue from 'vue';
+import { Counter } from 'ui';
 
-export default {
+export default Vue.extend({
   name: 'app',
+  computed: {
+    count() {
+      return this.$store.state.counter.count
+    }
+  },
   components: {
-    Counter
+    Counter 
   }
-}
+});
 </script>
 
 <style>
