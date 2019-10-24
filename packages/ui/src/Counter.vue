@@ -6,20 +6,21 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+// NOTE: NOT USE Vue.extend()
 export default {
     computed: {
-        count() {
-            return this.$store.state.counter.count;
+        count(): number {
+            return (this as any).$store.state.counter.count;
         }
     },
     methods: {
         increment() {
-            this.$store.dispatch('counter/increment')
+            (this as any).$store.dispatch('counter/increment')
         },
         decrement() {
-            this.$store.dispatch('counter/decrement')
-        },
+            (this as any).$store.dispatch('counter/decrement')
+        }
     }
 }
 </script>

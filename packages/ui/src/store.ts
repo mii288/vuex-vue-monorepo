@@ -1,24 +1,22 @@
-import Vuex from 'vuex'
-
 const INCREMENT = 'increment'
 const DECREMENT = 'decrement'
 
 const actions = {
-   [INCREMENT]({ commit }) {
+   [INCREMENT]({ commit }: any) {
        commit(INCREMENT)
    },
 
-   [DECREMENT]({ commit }) {
+   [DECREMENT]({ commit }: any) {
        commit(DECREMENT)
    } 
 }
 
 const mutations = {
-   [INCREMENT](state) {
+   [INCREMENT](state: any) {
        state.count += 1 
    },
 
-   [DECREMENT](state) {
+   [DECREMENT](state: any) {
        state.count -= 1
    } 
 }
